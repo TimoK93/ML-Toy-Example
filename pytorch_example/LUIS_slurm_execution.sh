@@ -7,6 +7,9 @@
 module load GCC/10.2.0
 module load CUDA/11.1.1
 
+source $CONDA_BIN
+conda activate TestEnv
+
 echo "CONDA_BIN: $CONDA_BIN"
 echo "HOSTNAME: $(hostname)"
 echo "CUDA visible devices: $CUDA_VISIBLE_DEVICES"
@@ -14,9 +17,6 @@ echo "GPU IDs: $SLURM_JOB_GPUS"
 echo "PYTHON VERSION: $(python --version)"
 echo "PATH: $PATH"
 echo $(python -c "import torch; print('TORCH VERSION:', torch.__version__)")
-
-source $CONDA_BIN
-conda activate TestEnv
 
 echo "======================= EXAMPLE 1 ==========================="
 python example1.py

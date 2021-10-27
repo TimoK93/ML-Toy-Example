@@ -11,6 +11,8 @@ echo "CUDA visible devices: $CUDA_VISIBLE_DEVICES"
 echo "GPU IDs: $SLURM_JOB_GPUS"
 echo "PYTHON VERSION: $(python --version)"
 echo "PATH: $PATH"
+echo $(python -c "import torch; print('TORCH VERSION:', torch.__version__)")
+
 
 source $CONDA_BIN
 conda activate TestEnv
